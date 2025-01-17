@@ -1,0 +1,181 @@
+body {
+  background: linear-gradient(to bottom, #1d45b3 0%, #761a63 75%, #e6612c 100%);
+  margin: 0;
+  overflow: hidden !important;
+}
+
+canvas {
+  cursor: crosshair;
+  display: block;
+}
+
+.text {
+  color: white;
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-family: "Montserrat", Sans-Serif;
+  font-size: 1.5rem;
+}
+
+#textt {
+  color: rgba(243, 150, 10, 0.678);
+}
+
+.item blockquote {
+  border-left: none;
+  margin: 0;
+}
+
+.gasy-content {
+  width: 100% !important;
+  height: 100% !important;
+  overflow-y: hidden;
+  overflow-x: hidden !important;
+}
+
+
+.mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  min-width: 100%;
+  height: 60px;
+  fill: #080826;
+}
+
+.mountains--layer1 {
+  z-index: 2;
+}
+
+.mountains--layer2 {
+  fill: #6f2b5d;
+  z-index: 0;
+}
+/**/
+#container {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 80pt;
+
+  text-align: center;
+
+  user-select: none;
+}
+/* relevant portion */
+
+.text .img a {
+  color: white;
+  position: absolute;
+  top: 160%;
+}
+.text .msg a {
+  color: white;
+  position: absolute;
+  top: 178%;
+}
+.text p {
+  font-size: 16px;
+}
+
+
+button {
+  all: unset; /* إزالة التنسيقات الافتراضية */
+  font-size: 16px; /* حجم النص */
+  font-weight: 500; /* سمك النص */
+  color: #fff; /* لون النص */
+  background: #28282d; /* لون خلفية الزر */
+  border-radius: 10px; /* زوايا مستديرة */
+  padding: 10px 20px; /* مسافة داخلية حول النص */
+  display: inline-flex; /* يجعل الزر يتكيف مع حجم النص */
+  align-items: center; /* توسيط النص عموديًا */
+  justify-content: center; /* توسيط النص أفقيًا */
+  cursor: pointer; /* تغيير المؤشر عند التمرير على الزر */
+}
+
+.button-1 {
+  color: #FFA07A; /* لون النص للزر الأول */
+}
+
+.button-2 {
+  color: #0ff; /* لون النص للزر الثاني */
+}
+
+
+
+button::after,
+button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+button::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+button::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+button:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+button:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.img, .msg {
+  display: flex;
+  justify-content: center; /* يضع الزر في المنتصف */
+  align-items: center; /* يوسّط الزر عموديًا إذا كانت الحاوية طويلة */
+  padding: 10px;
+}
+
+.img button, .msg button {
+  transform: translateX(-100px); /* يحرك الزر قليلاً إلى جهة اليسار */
+}
+
+ .img button,
+.msg button {
+  margin-left: 200px; /* تعديل القيمة حسب المسافة التي تريدها */
+}
